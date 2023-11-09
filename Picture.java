@@ -16,6 +16,7 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private Circle moon;
+    private Square grass;
     /**
      * Constructor for objects of class Picture
      */
@@ -27,7 +28,7 @@ public class Picture
     /**
      * Draw this picture.
      */
-    public void draw()
+    public void draw() throws InterruptedException
     {
         wall = new Square();
         wall.moveHorizontal(-140);
@@ -47,13 +48,21 @@ public class Picture
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
         roof.makeVisible();
-
+        
+        grass = new Square();
+        grass.makeVisible();
+        grass.changeColor("green");
+        grass.moveVertical(100);
+        grass.changeSize(550);
+        grass.moveHorizontal(-350);
+        
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
         sun.makeVisible();
+        sun.moveHorizontal(100);
+        sun.moveVertical(-100);
+        sun.slowMoveVertical(120);
+        sun.changeSize(80);
         
         moon = new Circle();
         moon.makeVisible();
@@ -61,6 +70,8 @@ public class Picture
         moon.moveVertical(-15);
         moon.changeSize(30);
         moon.changeColor("magenta");
+        
+        
     }
 
     /**
