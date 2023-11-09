@@ -17,6 +17,7 @@ public class Picture
     private Circle sun;
     private Circle moon;
     private Square grass;
+    private Circle amanecer;
     /**
      * Constructor for objects of class Picture
      */
@@ -58,18 +59,22 @@ public class Picture
         
         sun = new Circle();
         sun.changeColor("yellow");
+        sun.changeSize(80);
         sun.makeVisible();
         sun.moveHorizontal(100);
-        sun.moveVertical(-100);
-        sun.slowMoveVertical(120);
-        sun.changeSize(80);
+        sun.moveVertical(100);
         
         moon = new Circle();
-        moon.makeVisible();
+        moon.changeSize(30);
         moon.moveHorizontal(-150);
         moon.moveVertical(-15);
-        moon.changeSize(30);
         moon.changeColor("magenta");
+        moon.makeVisible();
+        
+        amanecer= new Circle();
+        moon.makeInvisible();
+        sun.slowMoveVertical(-170);
+
         
         
     }
