@@ -18,6 +18,8 @@ public class Picture
     private Circle moon;
     private Square grass;
     private Circle amanecer;
+    private Person persona;
+    private Person persona2;
     /**
      * Constructor for objects of class Picture
      */
@@ -60,9 +62,10 @@ public class Picture
         sun = new Circle();
         sun.changeColor("yellow");
         sun.changeSize(80);
-        sun.makeVisible();
         sun.moveHorizontal(100);
-        sun.moveVertical(100);
+        sun.moveVertical(-100);
+        sun.makeVisible();
+        sun.slowMoveVertical(120);
         
         moon = new Circle();
         moon.changeSize(30);
@@ -71,14 +74,33 @@ public class Picture
         moon.changeColor("magenta");
         moon.makeVisible();
         
-        amanecer= new Circle();
-        moon.makeInvisible();
-        sun.slowMoveVertical(-170);
+        
+        
 
         
         
     }
-
+    /**
+     * Sun move
+     */
+    public void amanecer()
+    {
+        moon.makeInvisible();
+        sun.slowMoveVertical(-170);
+        persona =new Person();
+        persona.makeVisible();
+        persona.moveHorizontal(-220);
+        persona.moveVertical(-15);
+        persona.slowMoveHorizontal(120);
+        persona2 =new Person();
+        persona2.makeVisible();
+        persona2.moveHorizontal(220);
+        persona2.moveVertical(-15);
+        persona2.slowMoveHorizontal(-250);
+        
+        
+        
+    }
     /**
      * Change this picture to black/white display
      */
